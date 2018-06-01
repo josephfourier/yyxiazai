@@ -1,7 +1,9 @@
 package com.yyxiazai.service;
 
 import com.yyxiazai.domain.User;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService extends BaseService<User> {
 
   public User queryByName (String name) {
