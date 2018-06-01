@@ -3,13 +3,20 @@ package com.yyxiazai.domain;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Table(name = "sys_user")
 public class User implements Serializable {
+    @Id()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; //编号
+
     private Long organizationId; //所属公司
     private String username; //用户名
     private String password; //密码
@@ -24,6 +31,7 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
     }
+
 
     public Long getId() {
         return id;
