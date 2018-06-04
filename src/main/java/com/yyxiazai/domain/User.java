@@ -3,10 +3,7 @@ package com.yyxiazai.domain;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +18,7 @@ public class User implements Serializable {
     private String username; //用户名
     private String password; //密码
     private String salt; //加密密码的盐
+    @Transient
     private List<Long> roleIds; //拥有的角色列表
     private Boolean locked = Boolean.FALSE;
 
